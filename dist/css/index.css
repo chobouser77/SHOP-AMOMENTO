@@ -93,6 +93,7 @@ body .s3 {
 body .s3 .s3-swiper {
   max-width: 1920px;
   box-sizing: border-box;
+  overflow: visible !important;
 }
 body .s3 .s3-swiper .swiper-wrapper {
   background-color: #000;

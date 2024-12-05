@@ -90,6 +90,7 @@ body{
     .s3-swiper {
       max-width: 1920px;
       box-sizing: border-box;
+      overflow: visible !important;
       .swiper-wrapper{
         background-color: #000;
         display: flex;
