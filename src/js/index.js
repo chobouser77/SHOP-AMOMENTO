@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-  // s2 스와이퍼
+  // p1 s2 스와이퍼
   var s2swiper = new Swiper(".s2-swiper", {
     slidesPerView: 6,
     spaceBetween: 20,
@@ -9,7 +9,7 @@ $(document).ready(function() {
       clickable: true,
     },
   });
-  // s3 스와이퍼
+  // p1 s3 스와이퍼
   var swiper = new Swiper(".s3-swiper", {
     pagination: {
       el: ".swiper-pagination",

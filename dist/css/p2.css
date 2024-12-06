@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body, ul, li {
   list-style: none;
   margin: 0;
@@ -14,6 +15,44 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+body .p2-s1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .p2-s1 #product {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 가로 6개 */
+  gap: 18px; /* 간격 */
+  margin: 20px 0;
+}
+body .p2-s1 #product .product {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 135px;
+}
+body .p2-s1 #product .product img {
+  width: 100%;
+}
+body .p2-s1 #product .product span {
+  font-size: 12px;
+}
+body .p2-s1 #product .product span:nth-child(1) {
+  font-size: 13px;
+  font-weight: 500;
+}
+body .p2-s1 .pagination {
+  display: flex;
+  gap: 27px;
+}
+body .p2-s1 .pagination button {
+  background-color: transparent !important;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=p2.css.map */
