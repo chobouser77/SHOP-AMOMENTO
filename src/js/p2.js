@@ -6,14 +6,13 @@ $(document).ready(function() {
   // JSON 데이터 가져오기
   $.getJSON("products.json", function(data) {
     products = data;
-    renderProducts(); 
-    createPagination(); // 페이지네이션 버튼 생성
+    renderAndPaginate(); // 상품 렌더링 및 페이지네이션 처리
   });
 
-  // 상품 렌더링 함수
-  function renderProducts() {
+  // 상품 렌더링 및 페이지네이션 처리 함수
+  function renderAndPaginate() {
     const grid = $("#product");
-    grid.empty(); // 기존 그리드 초기화
+    grid.empty(); // 기존 상품 초기화
 
     // 현재 페이지에 해당하는 상품만 자르기
     const start = (currentPage - 1) * productsPerPage;
@@ -31,55 +30,69 @@ $(document).ready(function() {
       `);
       grid.append(productDiv);
     });
-  }
 
-  // 페이지네이션 기능
-  $("#prev-page").click(function() {
-    if (currentPage > 1) {
-      currentPage--;
-      renderProducts();
-      updatePagination();
-    }
-  });
-
-  $("#next-page").click(function() {
-    if (currentPage * productsPerPage < products.length) {
-      currentPage++;
-      renderProducts();
-      updatePagination();
-    }
-  });
-
-  // 페이지 번호 버튼 클릭 이벤트 처리
-  function createPagination() {
+    // 페이지네이션 버튼 생성
     const totalPages = Math.ceil(products.length / productsPerPage);
     const paginationContainer = $(".pagination");
-
-    paginationContainer.empty(); // 기존 버튼 초기화
+    paginationContainer.empty(); // 기존 페이지 번호 초기화
 
     // 이전 버튼
-    paginationContainer.append('<button id="prev-page">&lt;</button>');
+    const prevButton = $('<button id="prev-page">&lt;</button>');
+    paginationContainer.append(prevButton);
 
-    // 페이지 번호 버튼 동적으로 생성
+    // 페이지 번호 버튼 생성
     for (let i = 1; i <= totalPages; i++) {
-      const pageButton = $('<button>').attr('id', `${i}page`).text(i);
-      pageButton.click(function() {
-        currentPage = i;
-        renderProducts();
-        updatePagination();
-      });
+      const pageButton = $("<button>").attr("id", `${i}page`).text(i);
       paginationContainer.append(pageButton);
     }
 
     // 다음 버튼
-    paginationContainer.append('<button id="next-page">&gt;</button>');
+    const nextButton = $('<button id="next-page">&gt;</button>');
+    paginationContainer.append(nextButton);
 
-    updatePagination(); // 초기 페이지 상태 업데이트
+    // 페이지 번호 버튼 클릭 이벤트 처리
+    $("button[id$='page']").click(function() {
+      currentPage = parseInt($(this).text()); // 클릭한 페이지 번호로 이동
+      renderAndPaginate(); // 해당 페이지의 상품 렌더링
+    });
+
+    // 페이지네이션 상태 업데이트
+    updatePagination();
   }
 
-  // 페이지 상태 업데이트 (활성화된 버튼 색상 변경 등)
+  // 페이지네이션 상태 업데이트 함수
   function updatePagination() {
-    $(".pagination button").removeClass("active"); // 모든 버튼에서 active 클래스 제거
-    $(`#${currentPage}page`).addClass("active"); // 현재 페이지에 active 클래스 추가
+    const totalPages = Math.ceil(products.length / productsPerPage);
+
+    // 이전 버튼 비활성화 처리
+    $("#prev-page").prop("disabled", currentPage === 1);
+
+    // 다음 버튼 비활성화 처리
+    $("#next-page").prop("disabled", currentPage === totalPages);
+
+    // 페이지 번호 버튼 활성화 처리
+    $("button[id$='page']").each(function() {
+      $(this).removeClass("active"); // 이전에 활성화된 페이지 버튼 클래스 제거
+      if (parseInt($(this).text()) === currentPage) {
+        $(this).addClass("active"); // 현재 페이지 번호 버튼 활성화
+      }
+    });
   }
+
+  // 이전 버튼 클릭 이벤트 처리
+  $("#prev-page").click(function() {
+    if (currentPage > 1) { // 현재 페이지가 1보다 클 때만
+      currentPage--; // 페이지 번호 감소
+      renderAndPaginate(); // 페이지 업데이트 후 렌더링
+    }
+  });
+
+  // 다음 버튼 클릭 이벤트 처리
+  $("#next-page").click(function() {
+    const totalPages = Math.ceil(products.length / productsPerPage);
+    if (currentPage < totalPages) { // 현재 페이지가 총 페이지 수보다 작은 경우
+      currentPage++; // 페이지 번호 증가
+      renderAndPaginate(); // 페이지 업데이트 후 렌더링
+    }
+  });
 });
