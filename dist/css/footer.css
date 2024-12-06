@@ -1,0 +1,48 @@
+.footer {
+  box-sizing: border-box;
+  max-width: 1920px;
+  width: 100%;
+  height: 317px;
+  padding: 0 12px;
+  padding-bottom: 40px;
+  display: flex;
+  align-items: end;
+}
+.footer div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.footer div nav {
+  display: flex;
+  width: 100%;
+  gap: 182px;
+}
+.footer div nav ul {
+  display: flex;
+  font-size: 12px;
+  gap: 50px;
+}
+.footer div nav ul:nth-child(1) {
+  font-weight: 500;
+  display: flex;
+}
+.footer div nav ul:nth-child(1) li {
+  display: flex;
+  gap: 10px;
+}
+.footer div nav ul:nth-child(1) li p {
+  font-size: 12px;
+  display: flex;
+  align-items: end;
+}
+.footer div nav ul:nth-child(1) li p span {
+  font-size: 14px;
+  color: #D2D2D2;
+}
+.footer div img {
+  width: 186px;
+  height: 106px;
+}
+
+/*# sourceMappingURL=footer.css.map */

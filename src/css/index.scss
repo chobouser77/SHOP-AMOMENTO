@@ -2,17 +2,20 @@
 body , ul , li{
   list-style: none;
   margin: 0; padding: 0;
+  font-family: 'Inter', Arial, sans-serif;
+}
+body{
+  max-width: 1920px;
+  width: 100%;
+  overflow-x: hidden;
 }
 a{
   text-decoration: none;
   color: inherit;
 }
 
-// 본문
+// 본문 p1
 body{
-  max-width: 1920px;
-  width: 100%;
-  overflow-x: hidden;
   .s1 {
     display: flex;
     flex-direction: column;
@@ -89,6 +92,7 @@ body{
     flex-direction: column;
     .s3-swiper {
       max-width: 1920px;
+      width: 100%;
       box-sizing: border-box;
       overflow: visible !important;
       .swiper-wrapper{
@@ -96,6 +100,7 @@ body{
         display: flex;
         z-index: 10;
         .swiper-slide {
+          display: flex;
           width: 100%;
           height: 1048px;
           img {
@@ -105,16 +110,21 @@ body{
         }
       }
       .swiper-pagination{
-        top: -20px;
-        left: 50px;
+        top: -30px;
+        left: auto;
+        right:  20px;
         z-index: 50;
+        width: 70px;
+        height: 20px;
       }
       .swiper-pagination span {
-        background: none;  /* 배경을 제거 */
-        padding: 0;         /* 불필요한 padding 제거 */
-        border: none;       /* 테두리 제거 */
-        color: #D2D2D2;        /* 텍스트 색상 변경 (필요시) */
-        font-size: 12px;    /* 텍스트 크기 조정 */
+        background: none;  
+        padding: 0;    
+        border: none;   
+        color: #D2D2D2;     
+        font-size: 12px;   
+        opacity: 1;
+
       }
       .swiper-pagination .swiper-pagination-bullet-active {
         color: #000000; /* 활성화된 페이지네이션 색상 */
