@@ -11,6 +11,38 @@ a {
   color: inherit;
 }
 
+.color-button {
+  box-sizing: border-box;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.color-button.active {
+  border: #000;
+}
+
+.bt2 {
+  right: 23px;
+}
+
+.bt3 {
+  right: 46px;
+}
+
+.bg-black {
+  background-color: #282413;
+}
+
+.bg-blown {
+  background-color: #615650;
+}
+
+.bg-bagic {
+  background-color: #F6F2E0;
+}
+
 body .s1 {
   display: flex;
   flex-direction: column;
@@ -56,11 +88,11 @@ body .s2 .s2-swiper {
   box-sizing: border-box;
 }
 body .s2 .s2-swiper .swiper-wrapper {
-  background-color: #000;
   display: flex;
 }
 body .s2 .s2-swiper .swiper-wrapper .swiper-slide {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 300px !important;
   height: 507px !important;

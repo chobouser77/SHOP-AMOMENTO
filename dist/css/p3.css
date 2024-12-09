@@ -1,0 +1,233 @@
+body, ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+body {
+  max-width: 1920px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.color-button {
+  box-sizing: border-box;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.color-button.active {
+  border: #000;
+}
+
+.bt2 {
+  right: 23px;
+}
+
+.bt3 {
+  right: 46px;
+}
+
+.bg-gray {
+  background-color: #CECDCB;
+}
+
+.bg-gold {
+  background-color: #FADE9D;
+}
+
+.bg-pink {
+  background-color: #861414;
+}
+
+.bg-bro {
+  background-color: #7F7A6C;
+}
+
+body .p3-s1 {
+  padding-left: 85px;
+  padding-top: 90px;
+  display: flex;
+  gap: 428px;
+}
+body .p3-s1 .left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 176px;
+  max-width: 72px;
+}
+body .p3-s1 .left div {
+  font-size: 14px;
+  font-weight: 500;
+}
+body .p3-s1 .left .img-area {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  width: 72px;
+  overflow: hidden;
+}
+body .p3-s1 .left .img-area img {
+  width: 72px;
+  height: 100px;
+}
+body .p3-s1 .light {
+  width: 100%;
+  max-height: 860px;
+  height: 100%;
+}
+body .p3-s1 .light .light-top {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+}
+body .p3-s1 .light .light-top div:nth-child(2) {
+  padding-left: 206px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+body .p3-s1 .light .light-top div:nth-child(2) button {
+  width: 35px;
+  height: 25px;
+  font-size: 12px;
+  border-radius: 2px;
+  background-color: #F5F5F5;
+  border: none;
+}
+body .p3-s1 .light .light-top div:nth-child(3) {
+  padding-left: 408px;
+}
+body .p3-s1 .light .light-top div:nth-child(3) button {
+  background-color: #000;
+  border-radius: 2px;
+  color: #F6F6F2;
+}
+body .p3-s1 .light .light-bottom {
+  padding-top: 137px;
+  display: flex;
+  gap: 18px;
+}
+body .p3-s1 .light .light-bottom img {
+  max-width: 419px;
+  width: 100%;
+  height: 100%;
+}
+body .p3-s2 {
+  padding-top: 156px;
+  padding-right: 140px;
+  display: flex;
+  justify-content: flex-end;
+}
+body .p3-s2 .s2-1, body .p3-s2 .s2-2, body .p3-s2 .s2-3 {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+body .p3-s2 .s2-1 {
+  padding-right: 353px;
+  gap: 16px;
+}
+body .p3-s2 .s2-1 div {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+body .p3-s2 .s2-1 div:nth-child(1) {
+  font-size: 13px !important;
+  font-weight: 600;
+}
+body .p3-s2 .s2-1 div:nth-child(2) {
+  font-size: 11px;
+  font-weight: 500;
+  text-decoration: dotted;
+}
+body .p3-s2 .s2-2 {
+  padding-right: 312px;
+}
+body .p3-s2 .s2-2:nth-child(1) {
+  font-size: 13px;
+  font-weight: 600;
+}
+body .p3-s2 .s2-2:nth-child(2) {
+  font-size: 11px;
+  font-weight: 500;
+}
+body .p3-s2 .s2-3:nth-child(1) {
+  font-size: 13px;
+  font-weight: 600;
+}
+body .p3-s2 .s2-3:nth-child(2) {
+  gap: 32px;
+  font-size: 11px;
+  font-weight: 500;
+}
+body .p3-s2 .s2-3:nth-child(3) {
+  font-size: 11px;
+  font-weight: 500;
+}
+body .p3-s3 {
+  display: flex;
+  flex-direction: column;
+  padding: 67px 20px;
+  padding-bottom: 135px;
+  position: relative;
+}
+body .p3-s3 .s3-top {
+  width: 100%;
+  gap: 48px;
+  display: flex;
+  align-items: end;
+}
+body .p3-s3 .s3-top span {
+  font-size: 15px;
+  font-weight: 500;
+}
+body .p3-s3 .s3-top a {
+  font-size: 12px;
+  font-weight: 500;
+}
+body .p3-s3 .s3-swiper {
+  padding-top: 42px;
+  max-width: 1920px;
+  box-sizing: border-box;
+}
+body .p3-s3 .s3-swiper .swiper-wrapper {
+  display: flex;
+}
+body .p3-s3 .s3-swiper .swiper-wrapper .swiper-slide {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 300px !important;
+  height: 507px !important;
+  background-color: #fff;
+  gap: 7px;
+}
+body .p3-s3 .s3-swiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  height: 432px;
+}
+body .p3-s3 .s3-swiper .swiper-wrapper .swiper-slide div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 12px;
+}
+body .p3-s3 .s3-swiper .swiper-wrapper .swiper-slide div span:nth-child(1) {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=p3.css.map */
