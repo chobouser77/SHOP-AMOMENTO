@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  // 헤더
   const open_bt = $(".op-mo-left");
   const close_bt = $(".close");
   const box = $(".mo-header-left");
@@ -9,4 +10,5 @@ $(document).ready(function() {
   close_bt.on("click", function () {
     box.removeClass("show");
   });  
+  
 });
