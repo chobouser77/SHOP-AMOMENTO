@@ -58,6 +58,7 @@ $(document).ready(function() {
 
     // 페이지네이션 상태 업데이트
     updatePagination();
+    // 
   }
 
   // 페이지네이션 상태 업데이트 함수
