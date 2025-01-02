@@ -24,9 +24,14 @@ body .p2-s1 {
 }
 body .p2-s1 #product {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 가로 6개 */
   gap: 18px; /* 간격 */
   margin: 20px 0;
+  grid-template-columns: repeat(6, 1fr); /* 가로 6개 */
+}
+@media (max-width: 768px) {
+  body .p2-s1 #product {
+    grid-template-columns: repeat(2, 1fr); /* 가로 6개 */
+  }
 }
 body .p2-s1 #product .product {
   display: flex;
@@ -36,6 +41,7 @@ body .p2-s1 #product .product {
 }
 body .p2-s1 #product .product img {
   width: 100%;
+  height: auto;
 }
 body .p2-s1 #product .product span {
   font-size: 12px;
@@ -53,6 +59,9 @@ body .p2-s1 .pagination button {
   border: none;
   font-size: 13px;
   font-weight: 700;
+}
+body .p2-s1 .pagination button.active {
+  color: red;
 }
 
 /*# sourceMappingURL=p2.css.map */

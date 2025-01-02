@@ -8,22 +8,30 @@
   display: flex;
   align-items: end;
 }
+.footer * {
+  text-wrap: nowrap;
+}
 .footer div {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 .footer div nav {
-  display: flex;
   width: 100%;
-  gap: 182px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
 }
 .footer div nav ul {
+  width: 50%;
   display: flex;
+  justify-content: space-between;
   font-size: 12px;
-  gap: 50px;
+  gap: 1%;
 }
 .footer div nav ul:nth-child(1) {
+  width: auto;
   font-weight: 500;
   display: flex;
 }
@@ -43,6 +51,18 @@
 .footer div img {
   width: 186px;
   height: 106px;
+}
+@media (max-width: 768px) {
+  .footer nav {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start !important;
+  }
+  .footer nav ul {
+    width: 100% !important;
+    gap: 22px !important;
+    flex-wrap: wrap;
+  }
 }
 
 /*# sourceMappingURL=footer.css.map */

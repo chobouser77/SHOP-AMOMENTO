@@ -1,9 +1,17 @@
 @charset "UTF-8";
+html {
+  overflow-x: hidden;
+}
+
 body, ul, li {
   list-style: none;
   margin: 0;
   padding: 0;
   font-family: "Inter", Arial, sans-serif;
+}
+
+p {
+  margin: 0;
 }
 
 a {
@@ -43,6 +51,9 @@ a {
   background-color: #F6F2E0;
 }
 
+body {
+  overflow-x: hidden;
+}
 body .s1 {
   display: flex;
   flex-direction: column;
@@ -132,7 +143,6 @@ body .s3 .s3-swiper .swiper-wrapper {
 body .s3 .s3-swiper .swiper-wrapper .swiper-slide {
   display: flex;
   width: 100%;
-  height: 1048px;
 }
 body .s3 .s3-swiper .swiper-wrapper .swiper-slide img {
   height: 100%;

@@ -11,36 +11,108 @@
   background-color: #fff;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 12px;
   box-sizing: border-box;
 }
-.header nav {
+.header nav.pc {
   height: 100%;
 }
-.header nav ul {
+.header nav.pc ul {
   height: 100%;
   gap: 20px;
   display: flex;
 }
-.header nav ul li {
+.header nav.pc ul li {
   height: 100%;
   display: flex;
   align-items: center;
 }
-.header nav ul li a {
+.header nav.pc ul li a {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 3px;
 }
-.header nav ul li div {
+.header nav.pc ul li div {
   width: 1rem;
   height: 1rem;
   display: flex;
   border: 1px solid #000;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 768px) {
+  .header nav.pc {
+    display: none;
+  }
+  .header nav.pc.right {
+    display: flex;
+  }
+  .header nav.pc.right .zero {
+    display: none;
+  }
+}
+.header button.op-mo-left {
+  display: none;
+  padding: 0;
+  width: 25px;
+  height: 25px;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+.header button.op-mo-left .var {
+  width: 100%;
+  height: 25%;
+  background-color: black;
+}
+@media (max-width: 768px) {
+  .header button.op-mo-left {
+    display: flex;
+  }
+}
+.header nav.mo-header-left {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 0;
+  overflow-x: hidden;
+  z-index: 99;
+  box-sizing: border-box;
+  padding: 10% 0;
+  background-color: #fff;
+  transition: width 1s ease, padding 1s ease;
+}
+.header nav.mo-header-left ul.mo-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  font-size: 24px;
+}
+.header nav.mo-header-left button.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 30px;
+  background: none;
+  border: none;
+}
+@media (max-width: 768px) {
+  .header nav.mo-header-left {
+    display: flex !important;
+  }
+}
+.header nav.mo-header-left.show {
+  width: 40vw;
+  padding: 10% 16px;
 }
 
 /*# sourceMappingURL=header.css.map */

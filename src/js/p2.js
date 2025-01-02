@@ -1,6 +1,6 @@
 $(document).ready(function() {
   const productsPerPage = 24;
-  let currentPage = 1;
+  let currentPage = 1;  // currentPage를 1로 초기화
   let products = [];
 
   // JSON 데이터 가져오기
@@ -14,7 +14,6 @@ $(document).ready(function() {
     const grid = $("#product");
     grid.empty(); // 기존 상품 초기화
 
-    // 현재 페이지에 해당하는 상품만 자르기
     const start = (currentPage - 1) * productsPerPage;
     const end = start + productsPerPage;
     const pageProducts = products.slice(start, end);
@@ -54,6 +53,7 @@ $(document).ready(function() {
     $("button[id$='page']").click(function() {
       currentPage = parseInt($(this).text()); // 클릭한 페이지 번호로 이동
       renderAndPaginate(); // 해당 페이지의 상품 렌더링
+      console.log("현재 페이지는", currentPage, "입니다.");
     });
 
     // 페이지네이션 상태 업데이트
@@ -77,22 +77,30 @@ $(document).ready(function() {
         $(this).addClass("active"); // 현재 페이지 번호 버튼 활성화
       }
     });
+
+    // 이전 버튼 클릭 이벤트 처리
+    $("#prev-page").off('click').on('click', function() {
+      console.log("이전버튼 클릭, currentPage:", currentPage); // 클릭된 버튼 상태 확인
+      if (currentPage > 1) {
+        currentPage--; // `currentPage`를 숫자로 간단히 감소
+        console.log("이전버튼 실행 성공, currentPage:", currentPage);
+        renderAndPaginate(); 
+      } else {
+        console.log("이전버튼 실행 실패 - 첫 페이지입니다.");
+      }
+    });
+
+    // 다음 버튼 클릭 이벤트 처리
+    $("#next-page").off('click').on('click', function() {
+      const totalPages = Math.ceil(products.length / productsPerPage);
+      console.log("다음버튼 클릭, currentPage:", currentPage, "totalPages:", totalPages); // 클릭된 버튼 상태 확인
+      if (currentPage < totalPages) {
+        currentPage++; // `currentPage`를 숫자로 간단히 증가
+        console.log("다음버튼 실행 성공, currentPage:", currentPage);
+        renderAndPaginate(); 
+      } else {
+        console.log("다음버튼 실행 실패 - 마지막 페이지입니다.");
+      }
+    });
   }
-
-  // 이전 버튼 클릭 이벤트 처리
-  $("#prev-page").click(function() {
-    if (currentPage > 1) { // 현재 페이지가 1보다 클 때만
-      currentPage--; // 페이지 번호 감소
-      renderAndPaginate(); // 페이지 업데이트 후 렌더링
-    }
-  });
-
-  // 다음 버튼 클릭 이벤트 처리
-  $("#next-page").click(function() {
-    const totalPages = Math.ceil(products.length / productsPerPage);
-    if (currentPage < totalPages) { // 현재 페이지가 총 페이지 수보다 작은 경우
-      currentPage++; // 페이지 번호 증가
-      renderAndPaginate(); // 페이지 업데이트 후 렌더링
-    }
-  });
 });
