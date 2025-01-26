@@ -24,7 +24,9 @@ body {
       display: grid;      
       gap: 18px; /* 간격 */
       margin: 20px 0;
-      grid-template-columns: repeat(6, 1fr); /* 가로 6개 */
+      padding: 0;
+      padding-left: 180px;
+      grid-template-columns: repeat(5, 1fr); /* 가로 6개 */
       @media (max-width : 768px) {
         grid-template-columns: repeat(2, 1fr); /* 가로 6개 */
       }

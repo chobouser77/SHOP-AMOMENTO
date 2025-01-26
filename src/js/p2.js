@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  const productsPerPage = 24;
+  const productsPerPage = 20;
   let currentPage = 1;  // currentPage를 1로 초기화
   let products = [];
 
